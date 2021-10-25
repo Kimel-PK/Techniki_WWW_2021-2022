@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Utwórz plik",
+        "type": "shell",
+		"options": {    
+			"cwd": "${workspaceFolder}/src"
+		},
+        "command": "Get-Content header.html, index.html, footer.html | Set-Content ../index.html; Get-Content header.html, baner.html, aside.html, kontakt.html, footer.html | Set-Content ../kontakt.html; Get-Content header.html, baner.html, aside.html, o-nas.html, footer.html | Set-Content ../o-nas.html; Get-Content header.html, baner.html, aside.html, uslugi.html, footer.html | Set-Content ../uslugi.html;",
+        "group": {
+        	"kind": "build",
+        	"isDefault": true
+        }
+      }
+    ]
+}

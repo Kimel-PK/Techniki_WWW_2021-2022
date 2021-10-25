@@ -80,10 +80,29 @@ header nav ul li:hover {
 /* STOPKA */
 
 footer {
-	background-color: chocolate;
+	background-color: #9acef3;
+}
+
+.stopka-nav {
+	padding: 10px 20px;
+}
+
+.stopka-copyright {
+	color: white;
+	background-color: #3fa8db;
+	border-top: 4px ridge #209bd7;
+}
+
+.stopka-copyright p {
+	margin: 0;
+	padding: 15px;
 }
 
 /* PODSTRONA WSPÓLNE */
+
+body.podstrona {
+	background-color: #deeffb;
+}
 
 /* baner */
 
@@ -132,10 +151,12 @@ footer {
 
 aside {
 	padding: 2em 0;
+	background-color: white;
 }
 
 main {
 	padding: 2em 0;
+	background-color: white;
 }
 
 /* PODSTRONA O NAS */
