@@ -4,6 +4,16 @@
 	box-sizing: border-box;
 }
 
+.debuger {
+	position: fixed;
+	left: 0;
+	top: 68px;
+	padding: 10px 20px;
+	background-color: white;
+	outline: 2px solid tomato;
+	z-index: 1000;
+}
+
 /* DOMYŚLNE TAGI */
 
 /* NAGŁÓWEK */
@@ -27,47 +37,68 @@ header nav ul li:hover {
 
 /* SEKCJA GŁÓWNA */
 
-.paralaksa {
-	height: 750px;
+.paralaksa-kontener {
 	position: relative;
 	overflow: hidden;
 }
 
-.warstwa-1, .warstwa-2, .warstwa-3, .warstwa-4 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 750px;
-	background-position: bottom;
-	background-repeat: no-repeat;
-	background-size: contain;
+.paralaksa-intro {
+	height: 1500px;
 }
 
-.warstwa-1 {
+.warstwa {
+	position: absolute;
+}
+
+.paralaksa-intro .warstwa {
+	width: 100%;
+	height: 100%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#warstwa-intro-1 {
 	background-image: url(../koncepty/warstwa-1.png);
 }
 
-.warstwa-2 {
+#warstwa-intro-2 {
 	background-image: url(../koncepty/warstwa-2.png);
 	filter: blur(4px);
 }
 
-.warstwa-3 {
+#warstwa-intro-3 {
 	background-image: url(../koncepty/warstwa-3.png);
 	filter: blur(8px);
 }
 
-.warstwa-4 {
+#warstwa-intro-4 {
 	background-image: url(../koncepty/warstwa-4.png);
 	filter: blur(12px);
 }
 
 /* SEKCJA STONKS */
 
+.paralaksa-stonks {
+	height: 1000px;
+}
+
 .stock-market {
-	background-image: url(../media/webP/stock_market.webp);
+	width: 100%;
+	height: 110%;
+	background-image: url(../media/webp/stock_market.webp);
+	background-position: center;
 	filter: brightness(0.5);
+}
+
+.mememan {
+	right: 0;
+	bottom: 0;
+}
+
+.stonks {
+	left: 0;
+	bottom: 0;
 }
 
 /* SEKCJA SUKCESY */

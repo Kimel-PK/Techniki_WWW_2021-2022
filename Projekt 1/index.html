@@ -17,14 +17,18 @@
 	</head>
 	<body>
 		
-		<header>
-			<div class="container-fluid szybki-kontakt">
-				<div class="row">
-					<div class="col-md-2">
-						<p>nr telefonu</p>
-					</div>
-					<div class="col-md-2">
-						<p>mail</p>
+		<div class="debuger">
+			<p>Scroll: <span id="debug-scroll">X</span></p>
+			<p>Parallax container: <span id="debug-container">X</span></p>
+		</div>
+		
+		<section class="container-fluid szybki-kontakt">
+			<div class="row">
+				<div class="col-md-2">
+					<p>nr telefonu</p>
+				</div>
+				<div class="col-md-2">
+					<p>mail</p>
 					</div>
 					<div class="col-md-5">
 						<p>lorem ipsum</p>
@@ -34,7 +38,9 @@
 					</div>
 				</div>
 			</div>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+		</section>
+		<header class="sticky-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand" href="/">LOGO FIRMY</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -59,13 +65,10 @@
 		</header>
 		
 		<!-- paralaksa -->
-		<section class="container">
-			<div class="paralaksa">
-				<div class="warstwa-4" style="transform: translate(0,0)"></div>
-				<div class="warstwa-3" style="transform: translate(0,0)"></div>
-				<div class="warstwa-2" style="transform: translate(0,0)"></div>
-				<div class="warstwa-1" style="transform: translate(0,0)"></div>
-			</div>
+		<section class="paralaksa-kontener paralaksa-intro" id="paralaksa-intro">
+			<div class="warstwa" id="warstwa-intro-3" style="transform: translate(0,0)"></div>
+			<div class="warstwa" id="warstwa-intro-2" style="transform: translate(0,0)"></div>
+			<div class="warstwa" id="warstwa-intro-1" style="transform: translate(0,0)"></div>
 		</section>
 		<!-- slogan -->
 		<section class="container">
@@ -76,13 +79,20 @@
 			</div>
 		</section>
 		<!-- stonks -->
-		<section class="container-fluid">
-			<div class="paralaksa2">
-				<div class="stock-market"></div>
-				<img src="media/webP/mememan.webp" />
+		<section class="paralaksa-kontener paralaksa-stonks" id="paralaksa-stonks">
+			<div class="warstwa stock-market">
+			</div>
+			<div class="warstwa">
+				<p>Teskt dolny</p>
+			</div>
+			<div class="warstwa stonks">
+				<img src="media/webp/stonks.webp" />
+			</div>
+			<div class="warstwa mememan">
+				<img src="media/webp/mememan.webp" />
 			</div>
 		</section>
-			<!-- kafelki o firmie czy coś tego typu -->
+		<!-- kafelki o firmie czy coś tego typu -->
 		<section class="container">
 			<div class="row">
 				<div class="kafelek col-md-6">
