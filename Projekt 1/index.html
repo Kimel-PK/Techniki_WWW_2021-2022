@@ -3,43 +3,71 @@
 	<head>
 		<title>Testowa strona</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
-		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" href="/css/style.css">
+		<script type="text/javascript" src="/js/script.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="shortcut icon" href="/media/ico/favicon.ico">
 	</head>
 	<body>
 		
 		<header>
-			<div class="row">
-				<div class="logo col-sm-3">
-					<img src="" />
+			<div class="container-fluid szybki-kontakt">
+				<div class="row">
+					<div class="col-md-2">
+						nr telefonu
+					</div>
 				</div>
-				<div class="logo col-sm-3"></div>
-				<nav class="col-sm-4">
-					<ul>
-						<li>Początek</li>
-						<li>O nas</li>
-						<li>Nasze osiągnięcia</li>
-						<li></li>
-						<li>Kontakt</li>
-					</ul>
-				</nav>
 			</div>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+				<a class="navbar-brand" href="/">LOGO FIRMY</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				 	<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="/">Strona główna <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+					 		<a class="nav-link" href="/o-nas.html">O nas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/uslugi.html">Usługi</a>
+					 	</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/kontakt.html">Kontakt</a>
+					 	</li>
+				 	</ul>
+				</div>
+			</nav>
 		</header>
 		
-		<div class="container">
-			<!-- paralaksa -->
+		<!-- paralaksa -->
+		<section class="container">
 			<div class="paralaksa">
 				<div class="warstwa-4" style="transform: translate(0,0)"></div>
 				<div class="warstwa-3" style="transform: translate(0,0)"></div>
 				<div class="warstwa-2" style="transform: translate(0,0)"></div>
 				<div class="warstwa-1" style="transform: translate(0,0)"></div>
 			</div>
-			<!-- stonks -->
-			<div>
-				
+		</section>
+		<!-- slogan -->
+		<section class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>Dłuższe życie każdej pralki to Lorem Ipsum</p>
+				</div>
 			</div>
+		</section>
+		<!-- stonks -->
+		<section class="container-fluid">
+			<div class="paralaksa2">
+				<div class="stock-market"></div>
+				<img src="/media/webP/mememan.webp" />
+			</div>
+		</section>
 			<!-- kafelki o firmie czy coś tego typu -->
+		<section class="container">
 			<div class="row">
 				<div class="kafelek col-md-6">
 					<h3>Lorem ipsum dolor sit amet</h3>
@@ -58,30 +86,28 @@
 					<p>Fusce vitae justo eget urna pretium sollicitudin. Nunc id turpis ut leo porta cursus vitae a tortor. Aenean velit est, aliquet eget iaculis vitae, feugiat ac mauris. Donec dapibus urna orci, eu rhoncus dolor convallis vitae. Pellentesque convallis erat tellus, ut gravida lorem faucibus vel</p>
 				</div>
 			</div>
+		</section>
 		<!-- stopka -->
-		</div>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<nav>
-							<ul>
-								<li>Początek</li>
-								<li>O nas</li>
-								<li>Nasze osiągnięcia</li>
-								<li></li>
-								<li></li>
-								<li>Kontakt</li>
-							</ul>
-						</nav>
-					</div>
-					<div class="col-md-4">
-						<p>
-							
-						</p>
-					</div>
-					<div class="col-md-4">
-					</div>
+		<footer class="container-fluid">
+			<div class="row">
+				<div class="col-md-4">
+					<nav>
+						<ul>
+							<li>Początek</li>
+							<li>O nas</li>
+							<li>Nasze osiągnięcia</li>
+							<li></li>
+							<li></li>
+							<li>Kontakt</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-md-4">
+					<p>Druga kolumna</p>
+				</div>
+				<div class="col-md-4">
+					<p>Trzecia kolumna</p>
+					<p>Dane kontaktowe</p>
 				</div>
 			</div>
 		</footer>

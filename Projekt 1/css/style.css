@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* DOMYŚLNE TAGI */
+
+/* NAGŁÓWEK */
+
+header nav ul li {
+	margin: 0px 10px;
+	padding: 5px 7px;
+	border-radius: 20px;
+	transition: 0.4s;
+}
+
+header nav ul li:hover {
+	background-color: brown;
+	transition: 0.4s;
+}
+
+.szybki-kontakt {
+	background-color: black;
+	color: white;
+}
+
+/* SEKCJA GŁÓWNA */
+
+.paralaksa {
+	height: 750px;
+	position: relative;
+	overflow: hidden;
+}
+
+.warstwa-1, .warstwa-2, .warstwa-3, .warstwa-4 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 750px;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.warstwa-1 {
+	background-image: url(../koncepty/warstwa-1.png);
+}
+
+.warstwa-2 {
+	background-image: url(../koncepty/warstwa-2.png);
+	filter: blur(4px);
+}
+
+.warstwa-3 {
+	background-image: url(../koncepty/warstwa-3.png);
+	filter: blur(8px);
+}
+
+.warstwa-4 {
+	background-image: url(../koncepty/warstwa-4.png);
+	filter: blur(12px);
+}
+
+/* SEKCJA STONKS */
+
+.stock-market {
+	background-image: url(../media/webP/stock_market.webp);
+	filter: brightness(0.5);
+}
+
+/* SEKCJA SUKCESY */
+
+.kafelek {
+	text-align: center;
+	background-color: azure;
+}
+
+/* STOPKA */
+
+footer {
+	background-color: chocolate;
+}
+
+/* PODSTRONA WSPÓLNE */
+
+/* baner */
+
+.baner {
+	position: relative;
+	padding: 4em 0;
+	background-image: url(../media/webP/baner3.webp);
+	background-position: center;
+	background-size: cover;
+}
+
+.baner .overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.6;
+}
+
+.baner .tytul {
+	color: white;
+}
+
+/* breadcrumbs */
+
+.breadcrumb-item a, .breadcrumb-item a:hover {
+	color: white;
+}
+
+.breadcrumb > li:first-child::before {
+	color: #fff;
+	content: "🏠";
+	padding-right: 0.5em;
+}
+
+/* główny kontener */
+
+.glowny-kontener {
+	margin: 4em 0;
+	-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+	-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+	box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+aside {
+	padding: 2em 0;
+}
+
+main {
+	padding: 2em 0;
+}
+
+/* PODSTRONA O NAS */
+
+/* PODSTRONA USŁUGI */
+
+/* PODSTRONA KONTAKT */
