@@ -24,8 +24,11 @@
 	<body>
 		
 		<div class="debuger">
+			<p>Window-Y: <span id="debug-window-y">X</span></p>
 			<p>Scroll: <span id="debug-scroll">X</span></p>
-			<p>Parallax container: <span id="debug-container">X</span></p>
+			<p>Stonks container top: <span id="debug-container-top">X</span></p>
+			<p>Stonks container bottom: <span id="debug-container-bottom">X</span></p>
+			<p>Stonks position: <span id="debug-position-percent">X</span></p>
 		</div>
 		
 		<section class="container-fluid szybki-kontakt">
@@ -75,9 +78,9 @@
 		
 		<!-- paralaksa -->
 		<section class="paralaksa-kontener paralaksa-intro" id="paralaksa-intro">
-			<div class="warstwa" id="warstwa-intro-3" style="transform: translate(0,0)" data-parallax-speed="1"></div>
-			<div class="warstwa" id="warstwa-intro-2" style="transform: translate(0,0)" data-parallax-speed="1"></div>
-			<div class="warstwa" id="warstwa-intro-1" style="transform: translate(0,0)" data-parallax-speed="1"></div>
+			<div class="warstwa" id="warstwa-intro-3" style="transform: translate(0,0)"></div>
+			<div class="warstwa" id="warstwa-intro-2" style="transform: translate(0,0)"></div>
+			<div class="warstwa" id="warstwa-intro-1" style="transform: translate(0,0)"></div>
 		</section>
 		<!-- slogan -->
 		<section class="container-fluid slogan">
@@ -89,14 +92,14 @@
 		</section>
 		<!-- stonks -->
 		<section class="paralaksa-kontener paralaksa-stonks" id="paralaksa-stonks">
-			<div class="warstwa stock-market" data-parallax-speed="0.5"></div>
-			<div class="warstwa" data-parallax-speed="0.6">
+			<div class="warstwa stock-market" data-parallax-x="0" data-parallax-y="150" data-parallax-mode="1" data-parallax-unit="%"></div>
+			<div class="warstwa" data-parallax-x="0" data-parallax-y="0">
 				<p>Teskt dolny</p>
 			</div>
-			<div class="warstwa stonks" data-parallax-speed="0.75">
+			<div class="warstwa stonks" data-parallax-x="0" data-parallax-y="-400">
 				<img src="media/webp/stonks.webp" />
 			</div>
-			<div class="warstwa mememan" data-parallax-speed="0">
+			<div class="warstwa mememan" data-parallax-x="-400" data-parallax-y="0">
 				<img src="media/webp/mememan.webp" />
 			</div>
 		</section>
