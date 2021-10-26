@@ -10,8 +10,24 @@ document.addEventListener('scroll', function(e) {
 function UstawParalakse () {
 	
 	for (let i = 0; i < $(".warstwa").length; i++) {
-		$(".warstwa").eq(i).css ("transform", "translate(0, " + window.scrollY * $(".warstwa").eq(i).data("parallax-speed") + "px)");
+		$(".warstwa").eq(i).css ("transform", "translate(0, " + (window.scrollY * $(".warstwa").eq(i).data("parallax-speed") - $(".warstwa").eq(i).parent().offset().top) + "px)");
 		// console.log ($(".warstwa").eq(i).data("parallax"));
+	}
+	
+}
+
+class Parallax {
+	
+	
+	
+	constructor(obiekt, offset, szybkosc) {
+		this.obiekt = obiekt;
+		this.offset = offset;
+		this.szybkosc = szybkosc;
+	}
+	
+	UstawPozycje () {
+		
 	}
 	
 }
