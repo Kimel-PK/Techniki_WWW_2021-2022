@@ -3,8 +3,15 @@ document.addEventListener('scroll', function(e) {
 	$("#debug-scroll").html (window.scrollY);
 	$("#debug-container").html (document.getElementById("paralaksa-intro").offsetTop);
 	
-	document.getElementById("warstwa-intro-3").style.transform = "translate(0, " + window.scrollY * 0.25 + "px)";
-	document.getElementById("warstwa-intro-2").style.transform = "translate(0, " + window.scrollY * 0.1 + "px)";
-	document.getElementById("warstwa-intro-1").style.transform = "translate(0, " + window.scrollY * 0.05 + "px)";
+	UstawParalakse();
 	
 });
+
+function UstawParalakse () {
+	
+	for (let i = 0; i < $(".warstwa").length; i++) {
+		$(".warstwa").eq(i).css ("transform", "translate(0, " + window.scrollY * $(".warstwa").eq(i).data("parallax-speed") + "px)");
+		// console.log ($(".warstwa").eq(i).data("parallax"));
+	}
+	
+}

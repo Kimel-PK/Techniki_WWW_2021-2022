@@ -4,6 +4,20 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--header-font: 'Mukta', sans-serif;
+	--paragraph-font: 'Noto Sans', sans-serif;
+	--primary-background-color: #0059b7;
+	--primary-hover-color: #003e80;
+	--primary-text-color: white;
+	--accent-background-color: #fdd604;
+	--accent-hover-color: #f7a212;
+	--secondary-background-color: #4c8acc;
+	--secondary-text-color: white;
+	--tertiary-background-color: red;
+	--tertiary-text-color: black;
+}  
+
 .debuger {
 	position: fixed;
 	left: 0;
@@ -16,23 +30,64 @@
 
 /* DOMYŚLNE TAGI */
 
+body {
+	overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--header-font);
+}
+
+p {
+	font-family: var(--paragraph-font);
+}
+
 /* NAGŁÓWEK */
 
-header nav ul li {
+nav.navbar {
+	background-color: var(--primary-background-color);
+}
+
+nav.navbar ul li {
 	margin: 0px 10px;
 	padding: 5px 7px;
 	border-radius: 20px;
 	transition: 0.4s;
 }
 
-header nav ul li:hover {
-	background-color: brown;
+nav.navbar ul li a {
+	color: var(--primary-text-color);
+	font-family: 'Mukta', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+nav.navbar ul li:hover {
+	background-color: var(--primary-hover-color);
 	transition: 0.4s;
 }
 
-.szybki-kontakt {
+section.szybki-kontakt {
+	padding: 5px 5px;
 	background-color: black;
 	color: white;
+}
+
+section.szybki-kontakt a {
+	color: var(--primary-text-color);
+}
+
+section.szybki-kontakt p {
+	margin: 0;
+	font-size: 0.8em;
+}
+
+section.szybki-kontakt .spolecznosciowe {
+	text-align: right;
+}
+
+section.szybki-kontakt .material-icons {
+	vertical-align:middle;
 }
 
 /* SEKCJA GŁÓWNA */
@@ -55,7 +110,7 @@ header nav ul li:hover {
 	height: 100%;
 	background-position: bottom;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
 }
 
 #warstwa-intro-1 {
@@ -77,6 +132,20 @@ header nav ul li:hover {
 	filter: blur(12px);
 }
 
+/* SEKCJA SLOGAN */
+
+section.slogan {
+	padding: 30px 0;
+	background-color: var(--primary-background-color);
+	text-align: center;
+}
+
+section.slogan p {
+	color: var(--primary-text-color);
+	font-family: 'Mukta', sans-serif;
+	font-size: 3em;
+}
+
 /* SEKCJA STONKS */
 
 .paralaksa-stonks {
@@ -88,6 +157,7 @@ header nav ul li:hover {
 	height: 110%;
 	background-image: url(../media/webp/stock_market.webp);
 	background-position: center;
+	background-size: cover;
 	filter: brightness(0.5);
 }
 
@@ -104,14 +174,23 @@ header nav ul li:hover {
 /* SEKCJA SUKCESY */
 
 .kafelek {
+	height: 100%;
+	padding: 30px;
 	text-align: center;
-	background-color: azure;
+	background-color: var(--accent-background-color);
+	border: 4px solid var(--accent-hover-color);
+	border-radius: 20px;
+}
+
+.kafelek .material-icons {
+	color: var(--accent-hover-color);
+	font-size: 6em;
 }
 
 /* STOPKA */
 
 footer {
-	background-color: #9acef3;
+	background-color: var(--secondary-background-color);
 }
 
 .stopka-nav {
@@ -120,8 +199,8 @@ footer {
 
 .stopka-copyright {
 	color: white;
-	background-color: #3fa8db;
-	border-top: 4px ridge #209bd7;
+	background-color: var(--primary-background-color);
+	border-top: 4px ridge var(--primary-background-color);
 }
 
 .stopka-copyright p {
@@ -156,7 +235,8 @@ body.podstrona {
 }
 
 .baner .tytul {
-	color: white;
+	color: var(--primary-text-color);
+	pointer-events: none;
 }
 
 /* breadcrumbs */
@@ -174,6 +254,7 @@ body.podstrona {
 /* główny kontener */
 
 .glowny-kontener {
+	border: 2px ridge #02141d;
 	margin: 4em 0;
 	-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 	-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
