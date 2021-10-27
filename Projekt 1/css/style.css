@@ -90,6 +90,46 @@ section.szybki-kontakt .material-icons {
 	vertical-align:middle;
 }
 
+/* PANEL BOCZNY */
+
+aside .partnerzy {
+	padding: 0 5px;
+	text-align: center;
+}
+
+aside .partnerzy img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: 0.2s;
+}
+
+aside .partnerzy a:hover img {
+	transform: scale(1.1);
+	transition: 0.2s;
+}
+
+/* STOPKA */
+
+footer {
+	background-color: var(--secondary-background-color);
+}
+
+.stopka-nav {
+	padding: 10px 20px;
+}
+
+.stopka-copyright {
+	color: white;
+	background-color: var(--primary-background-color);
+	border-top: 4px ridge var(--primary-background-color);
+}
+
+.stopka-copyright p {
+	margin: 0;
+	padding: 15px;
+}
+
 /* SEKCJA GŁÓWNA */
 
 .paralaksa-kontener {
@@ -187,27 +227,6 @@ section.slogan p {
 	font-size: 6em;
 }
 
-/* STOPKA */
-
-footer {
-	background-color: var(--secondary-background-color);
-}
-
-.stopka-nav {
-	padding: 10px 20px;
-}
-
-.stopka-copyright {
-	color: white;
-	background-color: var(--primary-background-color);
-	border-top: 4px ridge var(--primary-background-color);
-}
-
-.stopka-copyright p {
-	margin: 0;
-	padding: 15px;
-}
-
 /* PODSTRONA WSPÓLNE */
 
 body.podstrona {
@@ -219,7 +238,7 @@ body.podstrona {
 .baner {
 	position: relative;
 	padding: 4em 0;
-	background-image: url(../media/webP/baner3.webp);
+	background-image: url(../media/webP/banner.webp);
 	background-position: center;
 	background-size: cover;
 }
