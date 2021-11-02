@@ -2,6 +2,11 @@ let paralaksy = new Array();
 
 window.onload = function() {
     
+	// !! kod debugujący
+	if ($("#paralaksa-stonks").length == 0) {
+		$(".debuger").hide();
+	}
+	
 	// po załadowaniu się strony znajdź wszystkie kontenery paralaksy
 	for (let i = 0; i < $(".paralaksa-kontener").length; i++) {
 		paralaksy[i] = new Parallax ($(".paralaksa-kontener").eq(i));
@@ -16,6 +21,7 @@ document.addEventListener('scroll', function(e) {
 	}
 });
 
+// !! funkcja debugująca
 function Debuguj () {
 	if ($("#paralaksa-stonks").length > 0) {
 		$("#debug-scroll").html (window.scrollY);

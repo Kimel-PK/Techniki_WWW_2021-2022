@@ -5,7 +5,7 @@
 }
 
 :root {
-	--header-font: 'Mukta', sans-serif;
+	--header-font: 'Raleway', sans-serif;
 	--paragraph-font: 'Noto Sans', sans-serif;
 	--primary-background-color: #0059b7;
 	--primary-hover-color: #003e80;
@@ -38,6 +38,30 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--header-font);
 }
 
+section.glowny-kontener h2 {
+	margin-bottom: 30px;
+}
+
+h2::after {
+	display: block;
+	width: 72px;
+	height: 3px;
+	content: "";
+	background-color: var(--primary-background-color);
+}
+
+section.glowny-kontener h3 {
+	margin-bottom: 20px;
+}
+
+h3::after {
+	display: block;
+	width: 48px;
+	height: 3px;
+	content: "";
+	background-color: var(--primary-background-color);
+}
+
 p {
 	font-family: var(--paragraph-font);
 }
@@ -57,8 +81,8 @@ nav.navbar ul li {
 
 nav.navbar ul li a {
 	color: var(--primary-text-color);
-	font-family: 'Mukta', sans-serif;
-	font-weight: bold;
+	font-family: var(--header-font);
+	font-weight: 600;
 	text-transform: uppercase;
 }
 
@@ -82,6 +106,11 @@ section.szybki-kontakt p {
 	font-size: 0.8em;
 }
 
+section.szybki-kontakt .kontakty .kontakt {
+	display: inline-block;
+	margin: 0 50px;
+}
+
 section.szybki-kontakt .spolecznosciowe {
 	text-align: right;
 }
@@ -93,6 +122,7 @@ section.szybki-kontakt .material-icons {
 /* PANEL BOCZNY */
 
 aside .partnerzy {
+	margin-bottom: 3em;
 	padding: 0 5px;
 	text-align: center;
 }
@@ -109,6 +139,18 @@ aside .partnerzy a:hover img {
 	transition: 0.2s;
 }
 
+aside .dokumenty img {
+	width: 50px;
+}
+
+aside .dokumenty .dokument {
+	margin-bottom: 2em;
+}
+
+aside h3 {
+	font-size: 1.5rem;
+}
+
 /* STOPKA */
 
 footer {
@@ -116,7 +158,12 @@ footer {
 }
 
 .stopka-nav {
-	padding: 10px 20px;
+	padding: 30px 50px;
+	color: white;
+}
+
+.stopka-nav a, .stopka-nav a:hover {
+	color: var(--primary-text-color);
 }
 
 .stopka-copyright {
@@ -182,7 +229,7 @@ section.slogan {
 
 section.slogan p {
 	color: var(--primary-text-color);
-	font-family: 'Mukta', sans-serif;
+	font-family: var(--header-font);
 	font-size: 3em;
 }
 
@@ -229,6 +276,7 @@ section.slogan p {
 
 /* PODSTRONA WSPÓLNE */
 
+/* !! nie wyświetla się ze wzgędu na sklejanie plików */
 body.podstrona {
 	background-color: #deeffb;
 }
@@ -280,14 +328,18 @@ body.podstrona {
 	box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
-aside {
-	padding: 2em 0;
+aside.col-md-3 {
+	padding: 2em;
 	background-color: white;
 }
 
-main {
-	padding: 2em 0;
+main.col-md-9 {
+	padding: 2em;
 	background-color: white;
+}
+
+.glowny-kontener img {
+	width: 100%;
 }
 
 /* PODSTRONA O NAS */
@@ -295,3 +347,12 @@ main {
 /* PODSTRONA USŁUGI */
 
 /* PODSTRONA KONTAKT */
+
+.podstrona-kontakt-kafelki {
+	margin: 2em 0;
+}
+
+.podstrona-kontakt-kafelki span.material-icons {
+	font-size: 4em;
+	color: var(--primary-background-color);
+}
