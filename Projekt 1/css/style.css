@@ -18,16 +18,6 @@
 	--tertiary-text-color: black;
 }  
 
-.debuger {
-	position: fixed;
-	left: 0;
-	top: 88px;
-	padding: 10px 20px;
-	background-color: white;
-	outline: 2px solid tomato;
-	z-index: 1000;
-}
-
 /* DOMYŚLNE TAGI */
 
 body {
@@ -37,6 +27,20 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--header-font);
 }
+
+h3::after {
+	display: block;
+	width: 48px;
+	height: 3px;
+	content: "";
+	background-color: var(--primary-background-color);
+}
+
+p, ul li {
+	font-family: var(--paragraph-font);
+}
+
+/* WSPÓLNE */
 
 section.glowny-kontener h2 {
 	margin-bottom: 30px;
@@ -54,16 +58,14 @@ section.glowny-kontener h3 {
 	margin-bottom: 20px;
 }
 
-h3::after {
-	display: block;
-	width: 48px;
-	height: 3px;
-	content: "";
-	background-color: var(--primary-background-color);
+.row.galeria img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-p, ul li {
-	font-family: var(--paragraph-font);
+.paralaksa-kontener .warstwa {
+	position: absolute;
 }
 
 /* NAGŁÓWEK */
@@ -185,56 +187,52 @@ footer {
 }
 
 .paralaksa-intro {
-	height: 1500px;
-}
-
-.warstwa {
-	position: absolute;
+	height: 1300px;
 }
 
 .paralaksa-intro .warstwa {
 	width: 100%;
-	height: 100%;
-	background-position: bottom;
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-size: contain;
 }
 
-#warstwa-intro-1 img { /* farma paneli */
-	width: 100%;
-	position: absolute;
+.paralaksa-intro .warstwa-1 { /* farma paneli */
+	height: 400px;
 	bottom: 0;
+	background-image: url(../media/webp/paralaksa-intro/warstwa-1.webp);
 }
 
-#warstwa-intro-2 img { /* łąka */
-	width: 100%;
-	position: absolute;
+.paralaksa-intro .warstwa-2 { /* łąka */
+	height: 800px;
 	bottom: 0;
+	background-image: url(../media/webp/paralaksa-intro/warstwa-2.webp);
 }
 
-#warstwa-intro-3 img { /* ptaki */
-	position: absolute;
+.paralaksa-intro .warstwa-3 { /* ptaki */
+	width: 500px;
+	height: 280px;
 	left: 50%;
 	top: 15%;
-	width: 400px;
+	background-image: url(../media/webp/paralaksa-intro/warstwa-3.webp);
 }
 
-#warstwa-intro-4 img { /* LOGO */
+.paralaksa-intro .warstwa-4 { /* miasto */
 	position: absolute;
-	top: 500px;
-	width: 100%;
+	bottom: 500px;
+	height: 400px;
+	background-image: url(../media/webp/paralaksa-intro/warstwa-4.webp);
 }
 
-#warstwa-intro-5 img { /* miasto */
+.paralaksa-intro .warstwa-5 img {  /* logo */
 	position: absolute;
 	top: 600px;
 	width: 100%;
 }
 
-#warstwa-intro-6 img { /* tło */
+.paralaksa-intro .warstwa-6 { /* tło */
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	background-image: url(../media/webp/paralaksa-intro/warstwa-6.webp);
 }
 
 /* SEKCJA SLOGAN */
@@ -277,6 +275,37 @@ section.slogan p {
 }
 
 /* SEKCJA SUKCESY */
+
+.separator {
+	height: 80px;
+	background-color: var(--primary-hover-color);
+}
+
+.sekcja-sukcesy {
+	position: relative;
+}
+
+.sukcesy-tlo {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+
+.sukcesy-tlo img {
+	position: absolute;
+	left: -1%;
+	top: -1%;
+	width: 102%;
+	height: 102%;
+	object-fit: cover;
+	filter: blur(8px);
+}
+
+.kafelek-kontener {
+	height: 100%;
+	padding: 2em 1em;
+}
 
 .kafelek {
 	height: 100%;

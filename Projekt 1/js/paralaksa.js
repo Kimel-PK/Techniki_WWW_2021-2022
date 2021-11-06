@@ -2,11 +2,6 @@ let paralaksy = new Array();
 
 window.onload = function() {
     
-	// !! kod debugujący
-	if ($("#paralaksa-stonks").length == 0) {
-		$(".debuger").hide();
-	}
-	
 	// po załadowaniu się strony znajdź wszystkie kontenery paralaksy
 	for (let i = 0; i < $(".paralaksa-kontener").length; i++) {
 		paralaksy[i] = new Parallax ($(".paralaksa-kontener").eq(i));
@@ -19,22 +14,10 @@ window.onload = function() {
 }
 
 document.addEventListener('scroll', function(e) {
-	Debuguj ();
 	for (let i = 0; i < paralaksy.length; i++) {
 		paralaksy[i].ObliczInterpolacje();
 	}
 });
-
-// !! funkcja debugująca
-function Debuguj () {
-	if ($("#paralaksa-stonks").length > 0) {
-		$("#debug-scroll").html (window.scrollY);
-		$("#debug-window-y").html ($(window).height());
-		$("#debug-container-top").html ($("#paralaksa-stonks").offset().top);
-		$("#debug-container-bottom").html ($("#paralaksa-stonks").offset().top + $("#paralaksa-stonks").height());
-		$("#debug-position-percent").html (-(($("#paralaksa-stonks").offset().top - $(window).scrollTop() - $(window).height()) / $("#paralaksa-stonks").height() + 1));
-	}
-}
 
 // kontener paralaksy
 class Parallax {
