@@ -12,6 +12,10 @@ window.onload = function() {
 		paralaksy[i] = new Parallax ($(".paralaksa-kontener").eq(i));
 	}
 	
+	for (let i = 0; i < paralaksy.length; i++) {
+		paralaksy[i].ObliczInterpolacje();
+	}
+	
 }
 
 document.addEventListener('scroll', function(e) {

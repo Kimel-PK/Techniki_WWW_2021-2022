@@ -42,7 +42,7 @@ section.glowny-kontener h2 {
 	margin-bottom: 30px;
 }
 
-h2::after {
+h2:not(.text-center)::after {
 	display: block;
 	width: 72px;
 	height: 3px;
@@ -62,7 +62,7 @@ h3::after {
 	background-color: var(--primary-background-color);
 }
 
-p {
+p, ul li {
 	font-family: var(--paragraph-font);
 }
 
@@ -200,23 +200,41 @@ footer {
 	background-size: contain;
 }
 
-#warstwa-intro-1 {
-	background-image: url(../koncepty/warstwa-1.png);
+#warstwa-intro-1 img { /* farma paneli */
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 }
 
-#warstwa-intro-2 {
-	background-image: url(../koncepty/warstwa-2.png);
-	filter: blur(4px);
+#warstwa-intro-2 img { /* łąka */
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 }
 
-#warstwa-intro-3 {
-	background-image: url(../koncepty/warstwa-3.png);
-	filter: blur(8px);
+#warstwa-intro-3 img { /* ptaki */
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	width: 400px;
 }
 
-#warstwa-intro-4 {
-	background-image: url(../koncepty/warstwa-4.png);
-	filter: blur(12px);
+#warstwa-intro-4 img { /* LOGO */
+	position: absolute;
+	top: 500px;
+	width: 100%;
+}
+
+#warstwa-intro-5 img { /* miasto */
+	position: absolute;
+	top: 600px;
+	width: 100%;
+}
+
+#warstwa-intro-6 img { /* tło */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 /* SEKCJA SLOGAN */
@@ -272,6 +290,10 @@ section.slogan p {
 .kafelek .material-icons {
 	color: var(--accent-hover-color);
 	font-size: 6em;
+}
+
+.kafelek h3::after {
+	display: none;
 }
 
 /* PODSTRONA WSPÓLNE */
@@ -345,6 +367,48 @@ main.col-md-9 {
 /* PODSTRONA O NAS */
 
 /* PODSTRONA USŁUGI */
+
+.paralaksa-uslugi {
+	position: relative;
+	height: 240px;
+}
+
+.paralaksa-uslugi .warstwa-1 { /* wywrotka */
+	position: absolute;
+	width: 20%;
+	bottom: 40px;
+}
+
+.paralaksa-uslugi .warstwa-2 { /* ulica */
+	position: absolute;
+	width: 110%;
+	height: 50px;
+	bottom: 0;
+}
+
+.paralaksa-uslugi .warstwa-3 { /* miasto */
+	width: 110%;
+	height: 100%;
+	right: 0;
+	top: 20px;
+}
+
+.paralaksa-uslugi .warstwa-3 img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.paralaksa-uslugi .warstwa-4 { /* niebo */
+	width: 100%;
+	height: 100%;
+}
+
+.paralaksa-uslugi .warstwa-4 img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 
 /* PODSTRONA KONTAKT */
 
