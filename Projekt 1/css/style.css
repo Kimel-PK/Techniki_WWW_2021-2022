@@ -199,13 +199,13 @@ footer {
 .paralaksa-intro .warstwa-1 { /* farma paneli */
 	height: 400px;
 	bottom: 0;
-	background-image: url(../media/webp/paralaksa-intro/warstwa-1.webp);
+	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-1.webp);
 }
 
 .paralaksa-intro .warstwa-2 { /* łąka */
 	height: 800px;
 	bottom: 0;
-	background-image: url(../media/webp/paralaksa-intro/warstwa-2.webp);
+	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-2.webp);
 }
 
 .paralaksa-intro .warstwa-3 { /* ptaki */
@@ -213,14 +213,14 @@ footer {
 	height: 280px;
 	left: 50%;
 	top: 15%;
-	background-image: url(../media/webp/paralaksa-intro/warstwa-3.webp);
+	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-3.webp);
 }
 
 .paralaksa-intro .warstwa-4 { /* miasto */
 	position: absolute;
 	bottom: 500px;
 	height: 400px;
-	background-image: url(../media/webp/paralaksa-intro/warstwa-4.webp);
+	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-4.webp);
 }
 
 .paralaksa-intro .warstwa-5 img {  /* logo */
@@ -232,7 +232,7 @@ footer {
 .paralaksa-intro .warstwa-6 { /* tło */
 	width: 100%;
 	height: 100%;
-	background-image: url(../media/webp/paralaksa-intro/warstwa-6.webp);
+	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-6.webp);
 }
 
 /* SEKCJA SLOGAN */
@@ -258,7 +258,7 @@ section.slogan p {
 .stock-market {
 	width: 100%;
 	height: 110%;
-	background-image: url(../media/webp/stock_market.webp);
+	background-image: url(../media/webp/strona-glowna/paralaksa-stonks/stock_market.webp);
 	background-position: center;
 	background-size: cover;
 	filter: brightness(0.5);
