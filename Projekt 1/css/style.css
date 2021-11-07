@@ -194,7 +194,7 @@ footer {
 }
 
 .paralaksa-intro {
-	height: 1300px;
+	height: 1000px;
 }
 
 .paralaksa-intro .warstwa {
@@ -204,13 +204,13 @@ footer {
 }
 
 .paralaksa-intro .warstwa-1 { /* farma paneli */
-	height: 400px;
+	height: 300px;
 	bottom: 0;
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-1.webp);
 }
 
 .paralaksa-intro .warstwa-2 { /* łąka */
-	height: 800px;
+	height: 450px;
 	bottom: 0;
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-2.webp);
 }
@@ -218,21 +218,21 @@ footer {
 .paralaksa-intro .warstwa-3 { /* ptaki */
 	width: 500px;
 	height: 280px;
-	left: 50%;
+	left: 30%;
 	top: 15%;
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-3.webp);
 }
 
 .paralaksa-intro .warstwa-4 { /* miasto */
 	position: absolute;
-	bottom: 500px;
+	bottom: 300px;
 	height: 400px;
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-4.webp);
 }
 
-.paralaksa-intro .warstwa-5 img {  /* logo */
+.paralaksa-intro .warstwa-5 {  /* logo */
 	position: absolute;
-	top: 600px;
+	top: calc(50vh - 178px);
 	width: 100%;
 }
 
@@ -261,7 +261,17 @@ footer {
 	width: 100%;
 }
 
-.paralaksa-stonks .warstwa-3 p { /* tekst */
+.paralaksa-stonks .warstwa-3 .slogan { /* tekst */
+	margin-top: 2em;
+	font-size: 3em;
+}
+
+.paralaksa-stonks .warstwa-3 .slogan-mobilny {
+	margin-top: 2em;
+	font-size: 2.2em;
+}
+
+.paralaksa-stonks .warstwa-3 p {
 	background-color: var(--primary-background-color);
 	padding: 0.6em 2em;
 	border-radius: 1em;
