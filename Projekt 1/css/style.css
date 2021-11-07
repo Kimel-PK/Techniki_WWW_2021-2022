@@ -40,6 +40,10 @@ p, ul li {
 	font-family: var(--paragraph-font);
 }
 
+ul {
+	list-style-position: inside;
+}
+
 /* WSPÓLNE */
 
 section.glowny-kontener h2 {
@@ -66,6 +70,18 @@ section.glowny-kontener h3 {
 
 .paralaksa-kontener .warstwa {
 	position: absolute;
+}
+
+.obraz-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.obraz-contain {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 /* NAGŁÓWEK */
@@ -108,17 +124,8 @@ section.szybki-kontakt p {
 	font-size: 0.8em;
 }
 
-section.szybki-kontakt .kontakty .kontakt {
-	display: inline-block;
-	margin: 0 50px;
-}
-
-section.szybki-kontakt .spolecznosciowe {
-	text-align: right;
-}
-
 section.szybki-kontakt .material-icons {
-	vertical-align:middle;
+	vertical-align: middle;
 }
 
 /* PANEL BOCZNY */
@@ -235,27 +242,13 @@ footer {
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-6.webp);
 }
 
-/* SEKCJA SLOGAN */
-
-section.slogan {
-	padding: 30px 0;
-	background-color: var(--primary-background-color);
-	text-align: center;
-}
-
-section.slogan p {
-	color: var(--primary-text-color);
-	font-family: var(--header-font);
-	font-size: 3em;
-}
-
 /* SEKCJA STONKS */
 
 .paralaksa-stonks {
 	height: 1000px;
 }
 
-.stock-market {
+.paralaksa-stonks .warstwa-4 { /* stock market */
 	width: 100%;
 	height: 110%;
 	background-image: url(../media/webp/strona-glowna/paralaksa-stonks/stock_market.webp);
@@ -264,13 +257,24 @@ section.slogan p {
 	filter: brightness(0.5);
 }
 
-.mememan {
+.paralaksa-stonks .warstwa-3 {
+	width: 100%;
+}
+
+.paralaksa-stonks .warstwa-3 p { /* tekst */
+	background-color: var(--primary-background-color);
+	padding: 0.6em 2em;
+	border-radius: 1em;
+}
+
+.paralaksa-stonks .warstwa-2 { /* mememan */
 	right: 0;
 	bottom: 0;
 }
 
-.stonks {
-	left: 0;
+.paralaksa-stonks .warstwa-1 { /* stonks */
+	width: 50%;
+	left: 10%;
 	bottom: 0;
 }
 
@@ -323,6 +327,13 @@ section.slogan p {
 
 .kafelek h3::after {
 	display: none;
+}
+
+/* SEKCJA KONTAKT */
+
+.kontakt-dymki .material-icons {
+	color: var(--primary-background-color);
+	font-size: 14em;
 }
 
 /* PODSTRONA WSPÓLNE */
