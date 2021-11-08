@@ -365,7 +365,7 @@ body.podstrona {
 .baner {
 	position: relative;
 	padding: 4em 0;
-	background-image: url(../media/webP/banner.webp);
+	background-image: url(../media/webp/banner.webp);
 	background-position: center;
 	background-size: cover;
 }
