@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Testowa strona</title>
+		<title>O nas - SonnenKraft</title>
 		<meta charset="utf-8">
 		 <!-- poprawka skali wyświetlania w widoku mobilnym -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css">
-		<!-- JS -->
-		<script type="text/javascript" src="js/paralaksa.js"></script>
 		<!--<script type="text/javascript" src="js/lazyload.js"></script>-->
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<!-- JS -->
+		<script type="text/javascript" src="js/paralaksa.js"></script>
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="media/ico/favicon.ico">
 	</head>
-	<body>
+	<body class="podstrona">
 		<section class="container-fluid szybki-kontakt">
 			<div class="row">
 				<div class="col-md-6 kontakty">
@@ -59,11 +59,11 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				 	<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="index.html">Strona główna <span class="sr-only">(current)</span></a>
-						</li>
 						<li class="nav-item">
-					 		<a class="nav-link" href="o-nas.html">O nas</a>
+							<a class="nav-link" href="index.html">Strona główna</a>
+						</li>
+						<li class="nav-item active">
+					 		<a class="nav-link" href="o-nas.html">O nas <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="uslugi.html">Usługi</a>
@@ -75,18 +75,17 @@
 				</div>
 			</nav>
 		</header>
-		
 		<!-- baner -->
 		<section class="baner">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1 class="tytul text-center">{Tytuł strony}</h1>
+						<h1 class="tytul text-center">O nas</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb bg-transparent justify-content-center">
 								<li class="breadcrumb-item"><a href="index.html">Strona główna</a></li>
-								<li class="breadcrumb-item active" aria-current="page">{Tytuł strony}</li>
+								<li class="breadcrumb-item active" aria-current="page">O nas</li>
 							</ol>
 						</nav>
 					</div>
@@ -124,7 +123,7 @@
 					</div>
 				</aside>
 				<!-- treść podstrony -->
-				<main class="col-md-9">
+				<main class="col-md-9 order-1 order-md-2">
                     <h2>Maecenas egestas vitae felis in faucibus.</h2>
 					<p>Nulla turpis nisi, tincidunt ac metus ut, molestie commodo purus. Sed bibendum nisi massa, eu aliquet ipsum viverra eu. Curabitur rutrum eros a neque viverra ultrices maximus quis metus. Nullam rutrum consequat nibh eget finibus. Phasellus erat massa, mollis sit amet lacinia quis, lacinia quis turpis. Sed posuere bibendum pulvinar. Curabitur sed massa et augue bibendum interdum. In hac habitasse platea dictumst.</p>
 					<div class="row">

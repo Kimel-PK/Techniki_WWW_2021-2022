@@ -1,8 +1,12 @@
+/* RESET DOMYŚLNYCH USTAWIEŃ PRZEGLĄDAREK */
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+/* USTAWIENIE ZMIENNYCH GLOBALNYCH CSS */
 
 :root {
 	--header-font: 'Raleway', sans-serif;
@@ -18,7 +22,7 @@
 	--tertiary-text-color: black;
 }  
 
-/* DOMYŚLNE TAGI */
+/* TAGI HTML5 */
 
 body {
 	overflow-x: hidden;
@@ -44,10 +48,14 @@ ul {
 	list-style-position: inside;
 }
 
-/* WSPÓLNE */
+/* KLASY WSPÓLNE */
 
 section.glowny-kontener h2 {
 	margin-bottom: 30px;
+}
+
+section.glowny-kontener h3 {
+	margin-bottom: 20px;
 }
 
 h2:not(.text-center)::after {
@@ -56,10 +64,6 @@ h2:not(.text-center)::after {
 	height: 3px;
 	content: "";
 	background-color: var(--primary-background-color);
-}
-
-section.glowny-kontener h3 {
-	margin-bottom: 20px;
 }
 
 .row.galeria img {
@@ -204,14 +208,14 @@ footer {
 }
 
 .paralaksa-intro .warstwa-1 { /* farma paneli */
-	height: 300px;
-	bottom: 0;
+	height: 500px;
+	bottom: -360px;
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-1.webp);
 }
 
 .paralaksa-intro .warstwa-2 { /* łąka */
-	height: 450px;
-	bottom: 0;
+	height: 535px;
+	bottom: -100px;
 	background-image: url(../media/webp/strona-glowna/paralaksa-intro/warstwa-2.webp);
 }
 
@@ -232,8 +236,12 @@ footer {
 
 .paralaksa-intro .warstwa-5 {  /* logo */
 	position: absolute;
-	top: calc(50vh - 178px);
+	top: calc(50vh - 25%);
 	width: 100%;
+}
+
+.paralaksa-intro .warstwa-5 .logo-mobilne-fix {
+	padding-top: 180px;
 }
 
 .paralaksa-intro .warstwa-6 { /* tło */
@@ -348,7 +356,6 @@ footer {
 
 /* PODSTRONA WSPÓLNE */
 
-/* !! nie wyświetla się ze wzgędu na sklejanie plików */
 body.podstrona {
 	background-color: #deeffb;
 }

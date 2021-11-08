@@ -1,7 +1,8 @@
 let paralaksy = new Array();
 
-window.onload = function() {
-    
+// pobierz DOM dopiero kiedy cały dokument został pobrany
+$(document).ready(function() {
+	
 	// po załadowaniu się strony znajdź wszystkie kontenery paralaksy
 	for (let i = 0; i < $(".paralaksa-kontener").length; i++) {
 		paralaksy[i] = new Parallax ($(".paralaksa-kontener").eq(i));
@@ -11,12 +12,13 @@ window.onload = function() {
 		paralaksy[i].ObliczInterpolacje();
 	}
 	
-}
-
-document.addEventListener('scroll', function(e) {
-	for (let i = 0; i < paralaksy.length; i++) {
-		paralaksy[i].ObliczInterpolacje();
-	}
+	// dodaj event uruchamiany zawsze kiedy przewijamy
+	$(document).scroll(function() {
+		for (let i = 0; i < paralaksy.length; i++) {
+			paralaksy[i].ObliczInterpolacje();
+		}
+	});
+	
 });
 
 // kontener paralaksy
