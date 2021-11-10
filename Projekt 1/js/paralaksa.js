@@ -1,3 +1,5 @@
+// Autor: Paweł Król
+
 let paralaksy = new Array();
 
 // pobierz DOM dopiero kiedy cały dokument został pobrany
