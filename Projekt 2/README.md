@@ -30,13 +30,12 @@ Strona internetowa na React.js i Express.js
 ### Strona restauracji
 
 - [X] Wyświetlenie z bazy nazwy, opisu, adresu
-- [ ] Utworzenie formularza na podstawie menu dań przypisanego do restauracji
-- [ ] Formularz jako lista dań z możliwością wybrania ilości, na koniec pole do podania adresu
+- [X] Utworzenie formularza na podstawie menu dań przypisanego do restauracji
 - [ ] Przekierowanie na stronę obserwacji zamówienia
 
 ### Strona zamówienia
 
-- [ ] Wypisane informacje o zamówieniu
+- [X] Wypisane informacje o zamówieniu
 - [ ] Możliwość rezygnacji z zamówienia jeśli jego status to "złożone"
 - [ ] Możliwość obserwowania na bieżąco statusu naszego zamówienia
 - [ ] Po zrealizowaniu zamówienia przycisk powrotu na stronę główną
@@ -61,7 +60,7 @@ Strona internetowa na React.js i Express.js
   - routes - endpointy backendu
   - index.js - routing backendu i uruchamianie serwera
 - frontend
-  - public - ???
+  - public - publiczne zasoby witryny
   - App.js - routing frontendu
   - src
     - pages - pliki podstron
