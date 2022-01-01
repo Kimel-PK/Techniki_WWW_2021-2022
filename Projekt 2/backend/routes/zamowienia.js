@@ -1,6 +1,6 @@
 const express = require ('express')
 const router = express.Router ()
-const { zamówienia, restauracje, zamówienie_danie } = require ('../models')
+const { zamówienia, restauracje, zamówienie_danie, dania } = require ('../models')
 
 // pobierz listę przyjętych zamówień danego kuriera
 router.post('/kurier/przyjete', async (req, res) => {
@@ -96,11 +96,45 @@ router.post('/dostepne', async (req, res) => {
 	res.json(listaZamówień)
 })
 
+router.get('/status/:kod', async (req, res) => {
+	const kod = req.params.kod
+	const zamówienie = await zamówienia.findOne({
+		where: {
+			kod: kod
+		}
+	})
+	res.json (zamówienie)
+})
+
 // złóż nowe zamówienie
 router.post('/nowe', async (req, res) => {
-	const zamówienie = req.body
-	await zamówienia.create(zamówienie)
-	res.json(zamówienie)
+	const zamówienie_dane = req.body
+	
+	// odczytaj z zamówienia dane podstawowe
+	const zamówienie = {
+		adres: zamówienie_dane.adres,
+		cena: zamówienie_dane.cena,
+		kod: zamówienie_dane.kod,
+		id_restauracja: zamówienie_dane.id_restauracja,
+		status: 'złożone'
+	}
+	
+	const zamówienie_res = await zamówienia.create(zamówienie)
+	
+	// odczytaj z zamówienia listę dań
+	for (const [key, value] of Object.entries(zamówienie_dane.dania)) {
+		zamówienie_danie_dane = {
+			ilość: value.ilość,
+			id_danie: value.id_danie,
+			id_zamówienie: zamówienie_res.id,
+			kod: zamówienie_dane.kod,
+		}
+		await zamówienie_danie.create(zamówienie_danie_dane)
+	}
+	
+	res.json({
+		message: 'Pomyślnie złożono zamówienie'
+	})
 })
 
 module.exports = router

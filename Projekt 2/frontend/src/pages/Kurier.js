@@ -42,6 +42,14 @@ function Kurier() {
 	
 	function podejmijZamówienie (id) {
 		console.log('podejmij zamówienie o id ' + id)
+		
+		const dane = {
+			token: 'super_tajne_kurierskie_hasło',
+			id_kurier: id_kuriera,
+			id_zamówienie: id
+		}
+		
+		axios.post(`http://localhost:3001/kurier/podejmij`, dane).then((response) => {})
 	}
 	
 	function zrealizujZamówienie (id) {

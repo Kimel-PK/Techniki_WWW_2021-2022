@@ -9,6 +9,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 function App() {
 	
+	console.log (window.sessionStorage)
+	
 	return (
 		<div className='root'>
 			<Router>
@@ -32,7 +34,7 @@ function App() {
 					<Route path='/restauracja/:id' exact element={<Restauracja />} />
 					<Route path='/login' exact element={<Logowanie />} />
 					<Route path='/kurier' exact element={<Kurier />} />
-					<Route path='/zamówienie' exact element={<Zamówienie />} />
+					<Route path='/zamowienie' exact element={<Zamówienie />} />
 				</Routes>
 				<div className='stopka'>
 					<Container>

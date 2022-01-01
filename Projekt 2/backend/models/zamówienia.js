@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.ENUM('złożone', 'w trakcie', 'zrealizowane', 'anulowane'),
 			allowNull: false,
 		},
+		kod: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		}
 	},
 	{
 		tableName: 'zamówienia',
@@ -20,8 +24,13 @@ module.exports = (sequelize, DataTypes) => {
 	})
 	
 	zamówienia.associate = (models) => {
-		zamówienia.hasMany(models.zamówienie_danie, {
-			foreignKey: 'id_zamówienie'
+		zamówienia.belongsTo(models.restauracje, {
+			foreignKey: 'id_restauracja',
+			as: 'restauracja'
+		})
+		zamówienia.belongsTo(models.użytkownicy, {
+			foreignKey: 'id_kurier',
+			as: 'kurier'
 		})
 	}
 	

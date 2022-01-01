@@ -32,16 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 	})
 	
 	restauracje.associate = (models) => {
-		restauracje.hasMany(models.menu, {
-			foreignKey: 'id_restauracja'
-		})
-		restauracje.hasMany(models.zamówienia, {
-			foreignKey: 'id_restauracja'
-		})
-		models.zamówienia.belongsTo(restauracje, {
-			foreignKey: 'id_restauracja',
-			as: 'restauracja'
-		})
+		
 	}
 	
 	return restauracje

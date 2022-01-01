@@ -11,5 +11,16 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false
 	})
 	
+	zamówienie_danie.associate = (models) => {
+		zamówienie_danie.belongsTo(models.dania, {
+			foreignKey: 'id_danie',
+			as: 'danie'
+		})
+		zamówienie_danie.belongsTo(models.zamówienia, {
+			foreignKey: 'id_zamówienie',
+			as: 'zamówienie'
+		})
+	}
+	
 	return zamówienie_danie
 }

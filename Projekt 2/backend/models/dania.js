@@ -15,18 +15,12 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false
 	})
 	
+	/*
 	dania.associate = (models) => {
-		dania.hasMany(models.menu, {
-			foreignKey: 'id_danie'
-		})
-		models.menu.belongsTo(dania, {
-			foreignKey: 'id_danie',
-			as: 'danie'
-		})
-		dania.hasMany(models.zamówienie_danie, {
-			foreignKey: 'id_danie'
-		})
+		models.dania.belongsToMany(models.zamówienia, { through: 'zamówienie_danie' })
+		models.zamówienia.belongsToMany(models.dania, { through: 'zamówienie_danie' })
 	}
+	*/
 	
 	return dania
 }
