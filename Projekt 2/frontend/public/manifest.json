@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Projekt 2",
+  "name": "Projekt witryny opartej na React.js i Express.js",
   "icons": [
     {
       "src": "favicon.ico",

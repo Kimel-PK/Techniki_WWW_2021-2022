@@ -13,14 +13,17 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.ENUM('złożone', 'w trakcie', 'zrealizowane', 'anulowane'),
 			allowNull: false,
 		},
-		id_kuriera: {
-			type: DataTypes.INTEGER,
-			allowNull: true,
-		}
 	},
 	{
-		tableName: 'zamówienia'
+		tableName: 'zamówienia',
+		timestamps: false
 	})
+	
+	zamówienia.associate = (models) => {
+		zamówienia.hasMany(models.zamówienie_danie, {
+			foreignKey: 'id_zamówienie'
+		})
+	}
 	
 	return zamówienia
 }

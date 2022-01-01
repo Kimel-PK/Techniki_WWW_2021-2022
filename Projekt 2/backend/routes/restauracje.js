@@ -8,6 +8,12 @@ router.get('/', async (req, res) => {
 	res.json(listaRestauracji)
 })
 
+router.get('/id/:id', async (req, res) => {
+	const id = req.params.id
+	const restauracja = await restauracje.findByPk(id)
+	res.json(restauracja);
+})
+
 router.post('/', async (req, res) => {
 	// twórz nowy wpis restauracji
 	const restauracja = req.body

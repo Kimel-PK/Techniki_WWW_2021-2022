@@ -14,6 +14,12 @@ const restauracjeRouter = require ('./routes/restauracje')
 app.use("/restauracje", restauracjeRouter);
 const zamówieniaRouter = require ('./routes/zamowienia')
 app.use("/zamowienia", zamówieniaRouter);
+const menuRouter = require ('./routes/menu')
+app.use("/menu", menuRouter);
+const użytkownicyRouter = require ('./routes/autoryzacja')
+app.use("/auth", użytkownicyRouter);
+const kurierzyRouter = require ('./routes/kurierzy')
+app.use("/kurier", kurierzyRouter);
 
 // jeśli nie istnieją utwórz wymagane tabele w bazie danych
 db.sequelize.sync().then(() => {

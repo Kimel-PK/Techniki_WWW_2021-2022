@@ -5,8 +5,12 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		opis: {
+		zdjęcie: {
 			type: DataTypes.STRING,
+			allowNull: true,
+		},
+		opis: {
+			type: DataTypes.TEXT,
 			allowNull: true,
 		},
 		miasto: {
@@ -20,15 +24,25 @@ module.exports = (sequelize, DataTypes) => {
 		numer_lokalu: {
 			type: DataTypes.STRING,
 			allowNull: true,
-		},
-		id_menu: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
 		}
 	},
 	{
-		tableName: 'restauracje'
+		tableName: 'restauracje',
+		timestamps: false
 	})
+	
+	restauracje.associate = (models) => {
+		restauracje.hasMany(models.menu, {
+			foreignKey: 'id_restauracja'
+		})
+		restauracje.hasMany(models.zamówienia, {
+			foreignKey: 'id_restauracja'
+		})
+		models.zamówienia.belongsTo(restauracje, {
+			foreignKey: 'id_restauracja',
+			as: 'restauracja'
+		})
+	}
 	
 	return restauracje
 }

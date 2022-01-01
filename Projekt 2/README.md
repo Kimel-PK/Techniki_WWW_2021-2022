@@ -7,9 +7,11 @@ Strona internetowa na React.js i Express.js
 ### Backend
 
 - Express.js
-- cors
-- mysql2
-- sequelize
+- Cors
+- Mysql2
+- Sequelize
+- Sequelize-cli
+- Bcrypt
 
 ### Frontend
 
@@ -22,12 +24,12 @@ Strona internetowa na React.js i Express.js
 
 ### Strona główna
 
-- [ ] Lista wszystkich restauracji
-- [ ] Linki do przejścia na stronę konkretnej restauracji
+- [X] Lista wszystkich restauracji
+- [X] Linki do przejścia na stronę konkretnej restauracji
 
 ### Strona restauracji
 
-- [ ] Wyświetlenie z bazy nazwy, opisu, adresu
+- [X] Wyświetlenie z bazy nazwy, opisu, adresu
 - [ ] Utworzenie formularza na podstawie menu dań przypisanego do restauracji
 - [ ] Formularz jako lista dań z możliwością wybrania ilości, na koniec pole do podania adresu
 - [ ] Przekierowanie na stronę obserwacji zamówienia
@@ -41,15 +43,15 @@ Strona internetowa na React.js i Express.js
 
 ### Panel logowania dla kurierów
 
-- [ ] Formularz logowania
-- [ ] Po zalogowaniu przekierowanie na stronę obsługi zamówień
+- [X] Formularz logowania
+- [X] Po zalogowaniu przekierowanie na stronę obsługi zamówień
 
 ### Panel kuriera
 
-- [ ] Wyświetlenie listy wszystkich złożonych zamówień
+- [X] Wyświetlenie listy wszystkich złożonych zamówień
 - [ ] Możliwość przyjęcia zamówienia
 - [ ] Możliwość zmiany statusu przyjętego zamówienia na "zrealizowane"
-- [ ] Możliwość wylogowania się z panelu kuriera
+- [X] Możliwość wylogowania się z panelu kuriera
 
 ## Ściąga
 
