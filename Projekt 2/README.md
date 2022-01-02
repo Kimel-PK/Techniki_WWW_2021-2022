@@ -65,7 +65,7 @@ Strona internetowa na React.js i Express.js
   - routes - endpointy backendu
   - index.js - routing backendu i uruchamianie serwera
 - frontend
-  - public - ???
+  - public - publiczne zasoby witryny
   - App.js - routing frontendu
   - src
     - pages - pliki podstron
