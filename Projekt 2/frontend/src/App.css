@@ -26,6 +26,37 @@ span {
 	text-align: right;
 }
 
+.paragraf-ale-link {
+	display: inline;
+	text-decoration: underline;
+}
+
+.paragraf-ale-link:hover {
+	cursor: pointer;
+	color: #d6b0a9;
+}
+
+.duzy-przycisk {
+	margin: 10px 0 40px 0;
+	text-align: center;
+}
+
+.duzy-przycisk p, .duzy-przycisk button {
+	display: inline-block;
+	padding: 15px 25px;
+	border: 4px solid #993b2a;
+	border-radius: 25px;
+	transition: .2s ease-in-out;
+	-webkit-box-shadow: 6px 6px 12px 0px rgba(66, 68, 90, 1);
+	-moz-box-shadow: 6px 6px 12px 0px rgba(66, 68, 90, 1);
+	box-shadow: 6px 6px 12px 0px rgba(66, 68, 90, 1);
+}
+
+.duzy-przycisk p:hover, .duzy-przycisk button:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
 /* Strona główna */
 
 .restauracje-karta {
@@ -54,27 +85,6 @@ span {
 }
 
 /* Strona restauracji */
-
-.do-strony-glownej {
-	margin: 10px 0 40px 0;
-	text-align: center;
-}
-
-.do-strony-glownej p {
-	display: inline-block;
-	padding: 15px 25px;
-	border: 4px solid #993b2a;
-	border-radius: 25px;
-	transition: .2s ease-in-out;
-	-webkit-box-shadow: 6px 6px 12px 0px rgba(66, 68, 90, 1);
-	-moz-box-shadow: 6px 6px 12px 0px rgba(66, 68, 90, 1);
-	box-shadow: 6px 6px 12px 0px rgba(66, 68, 90, 1);
-}
-
-.do-strony-glownej p:hover {
-	cursor: pointer;
-	transform: scale(1.1);
-}
 
 .restauracja-info img {
 	width: 100%;
@@ -115,6 +125,26 @@ span {
 }
 
 /* Zamówienie */
+
+.zamówienie-status {
+	font-size: 1.5em;
+}
+
+.zamówienie-status-złożone {
+	color: green;
+}
+
+.zamówienie-status-w-trakcie {
+	color: yellow;
+}
+
+.zamówienie-status-zrealizowane {
+	color: blue
+}
+
+.zamówienie-status-anulowane {
+	color: red
+}
 
 /* Panel logowania */
 

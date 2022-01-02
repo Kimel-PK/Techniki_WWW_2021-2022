@@ -1,6 +1,6 @@
 const express = require ('express')
 const router = express.Router ()
-const { restauracje } = require ('../models')
+const { restauracje, dania } = require ('../models')
 
 router.get('/', async (req, res) => {
 	// pobierz listę restauracji w jakich można złożyć zamówienie
@@ -10,7 +10,18 @@ router.get('/', async (req, res) => {
 
 router.get('/id/:id', async (req, res) => {
 	const id = req.params.id
-	const restauracja = await restauracje.findByPk(id)
+	const restauracja = await restauracje.findAll({
+		include: [
+			{
+				model: dania,
+				attributes: ['id', 'nazwa', 'cena'],
+				as: 'dania'
+			}
+		],
+		where: {
+			id: id
+		}
+	})
 	res.json(restauracja)
 })
 

@@ -22,28 +22,28 @@ function Home() {
 				<Row>
 					<h2 className='text-center'>Nasze lokale</h2>
 				</Row>
-				{listaRestauracji.map((value, key) => {
+				{listaRestauracji.map((restauracja, key) => {
 					return (
-						<Row key={ key } className='restauracje-karta' onClick={() => {navigate(`/restauracja/${value.id}`)}}>
+						<Row key={ key } className='restauracje-karta' onClick={() => {navigate(`/restauracja/${restauracja.id}`)}}>
 							<Col md='4' className='restauracje-karta-zdjecie'>
-								<img src={value.zdjęcie} alt='Zdjęcie restauracji' />
+								<img src={restauracja.zdjęcie} alt='Zdjęcie restauracji' />
 							</Col>
 							<Col md='8'>
 								<Row>
 									<div className='nazwa'>
-										<h3 className="text-center">{value.nazwa}</h3>
+										<h3 className="text-center">{restauracja.nazwa}</h3>
 									</div>
 								</Row>
 								<Row>
 									<Col lg='8' className='restauracja-karta-info'>
 										<div className='opis'>
-											<p>{value.opis}</p>
+											<p>{restauracja.opis}</p>
 										</div>
 									</Col>
 									<Col lg='4' className='restauracja-karta-adres'>
 										<h4>Lokalizacja:</h4>
-										<p>{value.miasto}</p>
-										<p>{value.ulica} {value.numer_lokalu}</p>
+										<p>{restauracja.miasto}<br></br>{restauracja.ulica} {restauracja.numer_lokalu}</p>
+										<p>{restauracja.kod_pocztowy} {restauracja.miasto_poczta}</p>
 									</Col>
 								</Row>
 							</Col>

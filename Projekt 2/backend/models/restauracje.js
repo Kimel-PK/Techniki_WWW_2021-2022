@@ -15,15 +15,23 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		miasto: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: false,
 		},
 		ulica: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: false,
 		},
 		numer_lokalu: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: false,
+		},
+		kod_pocztowy: {
+			type: DataTypes.STRING(6),
+			allowNull: false,
+		},
+		miasto_poczta: {
+			type: DataTypes.STRING,
+			allowNull: false,
 		}
 	},
 	{

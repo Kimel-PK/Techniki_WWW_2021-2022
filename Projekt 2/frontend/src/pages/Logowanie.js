@@ -36,7 +36,7 @@ function Logowanie() {
 	return (
 		<main>
 			<Container className='wrapper-login'>
-				<div className='do-strony-glownej'>
+				<div className='duzy-przycisk'>
 					<p onClick={() => {navigate('/')}}>Powrót do strony głównej</p>
 				</div>
 				<Row>

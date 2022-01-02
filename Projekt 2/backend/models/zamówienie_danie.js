@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
 	})
 	
 	zamówienie_danie.associate = (models) => {
-		zamówienie_danie.belongsTo(models.dania, {
-			foreignKey: 'id_danie',
-			as: 'danie'
-		})
-		zamówienie_danie.belongsTo(models.zamówienia, {
-			foreignKey: 'id_zamówienie',
-			as: 'zamówienie'
-		})
+		models.zamówienia.belongsToMany(models.dania, {
+			through: zamówienie_danie,
+			foreignKey: 'id_zamówienie'
+		});
+		models.dania.belongsToMany(models.zamówienia, {
+			through: zamówienie_danie,
+			foreignKey: 'id_danie'
+		});
 	}
 	
 	return zamówienie_danie

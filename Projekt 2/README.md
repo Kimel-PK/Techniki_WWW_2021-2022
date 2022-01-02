@@ -16,6 +16,7 @@ Strona internetowa na React.js i Express.js
 ### Frontend
 
 - React.js
+- React-Bootstrap
 - Axios
 - Formik
 - Yup
@@ -30,16 +31,15 @@ Strona internetowa na React.js i Express.js
 ### Strona restauracji
 
 - [X] Wyświetlenie z bazy nazwy, opisu, adresu
-- [ ] Utworzenie formularza na podstawie menu dań przypisanego do restauracji
-- [ ] Formularz jako lista dań z możliwością wybrania ilości, na koniec pole do podania adresu
-- [ ] Przekierowanie na stronę obserwacji zamówienia
+- [X] Formularz zamówienia jako lista dań przypisanych do restauracji z możliwością wybrania ilości, na koniec pola do podania adresu
+- [X] Przekierowanie na stronę obserwacji zamówienia
 
 ### Strona zamówienia
 
-- [ ] Wypisane informacje o zamówieniu
-- [ ] Możliwość rezygnacji z zamówienia jeśli jego status to "złożone"
-- [ ] Możliwość obserwowania na bieżąco statusu naszego zamówienia
-- [ ] Po zrealizowaniu zamówienia przycisk powrotu na stronę główną
+- [X] Wypisane informacje o zamówieniu
+- [X] Możliwość rezygnacji z zamówienia jeśli jego status to "złożone"
+- [X] Możliwość obserwowania na bieżąco statusu naszego zamówienia
+- [X] Po zrealizowaniu zamówienia przycisk powrotu na stronę główną
 
 ### Panel logowania dla kurierów
 
@@ -49,9 +49,13 @@ Strona internetowa na React.js i Express.js
 ### Panel kuriera
 
 - [X] Wyświetlenie listy wszystkich złożonych zamówień
-- [ ] Możliwość przyjęcia zamówienia
-- [ ] Możliwość zmiany statusu przyjętego zamówienia na "zrealizowane"
+- [X] Możliwość przyjęcia zamówienia
+- [X] Możliwość zmiany statusu przyjętego zamówienia na "zrealizowane"
 - [X] Możliwość wylogowania się z panelu kuriera
+
+### Widok mobilny
+
+- [ ] Responsywność (Bootstrap)
 
 ## Ściąga
 

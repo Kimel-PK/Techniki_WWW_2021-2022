@@ -8,9 +8,6 @@ import Zamówienie from './pages/Zamówienie'
 import { Container, Row, Col } from 'react-bootstrap'
 
 function App() {
-	
-	console.log (window.sessionStorage)
-	
 	return (
 		<div className='root'>
 			<Router>
@@ -41,7 +38,17 @@ function App() {
 						<Row>
 							<Col md='6'>
 								<h2>Meta</h2>
-								<Link to='/login'>Kurier - logowanie</Link>
+								<p>
+									<Link to='/login'>Kurier - logowanie</Link>
+								</p>
+								<p className='paragraf-ale-link' onClick={ () => {
+									console.log (window.sessionStorage)
+								}}>Wyświetl dane sesji w konsoli</p>
+								<p>
+									<Link to='/' onClick={ () => {
+										window.sessionStorage.clear()
+									}}>Wyczyść sesję</Link>
+								</p>
 							</Col>
 							<Col md='6'>
 								<h2>Dane kontaktowe</h2>

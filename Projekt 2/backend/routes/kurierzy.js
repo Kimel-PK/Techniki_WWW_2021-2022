@@ -32,6 +32,7 @@ router.post('/', async (req, res) => {
 	})
 })
 
+// podejmij się dostarczenia zamówienia
 router.post('/podejmij', async (req, res) => {
 	const { id_zamówienie, id_kurier, token } = req.body
 	
@@ -41,6 +42,8 @@ router.post('/podejmij', async (req, res) => {
 		})
 		return
 	}
+	
+	// !! sprawdź czy zamówienie nie jest odbierane innemu kurierowi
 	
 	await zamówienia.update(
 		{
@@ -55,7 +58,36 @@ router.post('/podejmij', async (req, res) => {
 	)
 	
 	res.json ({
-		message: 'Kurier ' + id_kurier + ' podejmuje realizację zamówienia ' + id_zamówienie
+		message: 'Kurier ' + id_kurier + ' podejmuje realizację zamówienia #' + id_zamówienie
+	})
+})
+
+// oznacz zamówienie jako zrealizowane
+router.post('/zrealizuj', async (req, res) => {
+	const { id_zamówienie, id_kurier, token } = req.body
+	
+	if (token != 'super_tajne_kurierskie_hasło') {
+		res.json ({
+			error: 'Te dane dostępne są jedynie dla kurierów!'
+		})
+		return
+	}
+	
+	// !! sprawdź czy zgadza się kurier
+	
+	await zamówienia.update(
+		{
+			status: 'zrealizowane'
+		},
+		{
+			where: {
+				id: id_zamówienie
+			}
+		}
+	)
+	
+	res.json ({
+		message: 'Kurier ' + id_kurier + ' zrealizował zamówienie #' + id_zamówienie
 	})
 })
 

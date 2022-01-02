@@ -1,7 +1,19 @@
 module.exports = (sequelize, DataTypes) => {
 	
 	const zamówienia = sequelize.define("zamówienia", {
-		adres: {
+		kod: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		miasto: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		ulica: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		numer_mieszkania: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
@@ -11,10 +23,6 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		status: {
 			type: DataTypes.ENUM('złożone', 'w trakcie', 'zrealizowane', 'anulowane'),
-			allowNull: false,
-		},
-		kod: {
-			type: DataTypes.STRING,
 			allowNull: false,
 		}
 	},

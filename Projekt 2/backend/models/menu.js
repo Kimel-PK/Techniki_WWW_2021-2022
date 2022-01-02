@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
 	})
 	
 	menu.associate = (models) => {
-		menu.belongsTo(models.dania, {
-			foreignKey: 'id_danie',
-			as: 'danie'
-		})
-		menu.belongsTo(models.restauracje, {
-			foreignKey: 'id_restauracja',
-			as: 'restauracja'
-		})
+		models.restauracje.belongsToMany(models.dania, {
+			through: menu,
+			foreignKey: 'id_restauracja'
+		});
+		models.dania.belongsToMany(models.restauracje, {
+			through: menu,
+			foreignKey: 'id_danie'
+		});
 	}
 	
 	return menu

@@ -21,11 +21,18 @@ router.post('/kurier/przyjete', async (req, res) => {
 	}
 	
 	const listaZamówień = await zamówienia.findAll ({
-		include: [{
-			model: restauracje,
-			attributes: ['nazwa'],
-			as: 'restauracja'
-		}],
+		include: [
+			{
+				model: restauracje,
+				attributes: ['nazwa'],
+				as: 'restauracja'
+			},
+			{
+				model: dania,
+				attributes: ['nazwa', 'cena'],
+				as: 'dania'
+			}
+		],
 		where: {
 			id_kurier: id_kurier,
 			status: 'w trakcie'
@@ -54,11 +61,18 @@ router.post('/kurier/zrealizowane', async (req, res) => {
 	}
 	
 	const listaZamówień = await zamówienia.findAll ({
-		include: [{
-			model: restauracje,
-			attributes: ['nazwa'],
-			as: 'restauracja'
-		}],
+		include: [
+			{
+				model: restauracje,
+				attributes: ['nazwa'],
+				as: 'restauracja'
+			},
+			{
+				model: dania,
+				attributes: ['nazwa', 'cena'],
+				as: 'dania'
+			}
+		],
 		where: {
 			id_kurier: id_kurier,
 			status: 'zrealizowane'
@@ -86,6 +100,11 @@ router.post('/dostepne', async (req, res) => {
 				model: restauracje,
 				attributes: ['nazwa'],
 				as: 'restauracja'
+			},
+			{
+				model: dania,
+				attributes: ['nazwa', 'cena'],
+				as: 'dania'
 			}
 		],
 		where: {
@@ -96,14 +115,67 @@ router.post('/dostepne', async (req, res) => {
 	res.json(listaZamówień)
 })
 
+// sprawdź status zamówienia
 router.get('/status/:kod', async (req, res) => {
+	const kod = req.params.kod
+	const zamówienie = await zamówienia.findAll({
+		include: [
+			{
+				model: restauracje,
+				attributes: ['nazwa'],
+				as: 'restauracja'
+			},
+			{
+				model: dania,
+				attributes: ['nazwa', 'cena'],
+				as: 'dania'
+			}
+		],
+		where: {
+			kod: kod
+		}
+	})
+	res.json (zamówienie)
+})
+
+// anuluj zamówienie jeśli jeszcze nie zostało podjęte
+router.get('/anuluj/:kod', async (req, res) => {
 	const kod = req.params.kod
 	const zamówienie = await zamówienia.findOne({
 		where: {
 			kod: kod
 		}
 	})
-	res.json (zamówienie)
+	
+	if (!zamówienie) {
+		res.json ({
+			error: 'Zamówienie ne istnieje'
+		})
+		return
+	}
+	
+	if (zamówienie.status === 'złożone') {
+		
+		await zamówienia.update(
+			{
+				status: 'anulowane'
+			},
+			{
+				where: {
+					id: zamówienie.id
+				}
+			}
+		)
+		
+		res.json ({
+			message: 'Zamówienie #' + zamówienie.id + ' zostało anulowane'
+		})
+	} else {
+		res.json ({
+			message: 'Zamówienie #' + zamówienie.id + ' nie może zostać anulowane'
+		})
+	}
+	
 })
 
 // złóż nowe zamówienie
@@ -112,7 +184,9 @@ router.post('/nowe', async (req, res) => {
 	
 	// odczytaj z zamówienia dane podstawowe
 	const zamówienie = {
-		adres: zamówienie_dane.adres,
+		miasto: zamówienie_dane.miasto,
+		ulica: zamówienie_dane.ulica,
+		numer_mieszkania: zamówienie_dane.numer_mieszkania,
 		cena: zamówienie_dane.cena,
 		kod: zamówienie_dane.kod,
 		id_restauracja: zamówienie_dane.id_restauracja,

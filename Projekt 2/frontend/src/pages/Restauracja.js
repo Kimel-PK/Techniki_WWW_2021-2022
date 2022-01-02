@@ -9,8 +9,8 @@ function Restauracja() {
 	
 	const navigate = useNavigate()
 	const [restauracja, pobierzRestauracje] = useState([])
-	const [menu, pobierzMenu] = useState([])
 	
+	// id restauracji pobrane z linku
 	const { id } = useParams()
 	
 	// obiekt przechowywujący zamówione dania
@@ -25,20 +25,20 @@ function Restauracja() {
 		axios.get(`http://localhost:3001/restauracje/id/${id}`).then((response) => {
 			pobierzRestauracje(response.data)
 		})
-		// pobierz menu wybranej restauracji
-		axios.get(`http://localhost:3001/menu/restauracja/${id}`).then((response) => {
-			pobierzMenu(response.data)
-		})
 	}, [id])
 	
 	// Formik - ustawienia formularza zamówienia
 	
 	const initialValues = {
-		adres: ""
+		miasto: "",
+		ulica: "",
+		numer_mieszkania: ""
 	}
 	
 	const validationSchema = Yup.object().shape({
-		adres: Yup.string().required("Pole adres nie może być puste!")
+		miasto: Yup.string().required("Pole miasto nie może być puste!"),
+		ulica: Yup.string().required("Pole ulica nie może być puste!"),
+		numer_mieszkania: Yup.string().required("Pole numer domu/mieszkania nie może być puste!"),
 	})
 	
 	const onSubmit = (data) => {
@@ -47,10 +47,12 @@ function Restauracja() {
 		const kod = Date.now().toString() + (Math.floor(Math.random() * (999 - 100)) + 100).toString()
 		
 		let zamówienie_dane = {
-			adres: data.adres,
+			miasto: data.miasto,
+			ulica: data.ulica,
+			numer_mieszkania: data.numer_mieszkania,
 			cena: kwota,
 			kod: kod,
-			id_restauracja: restauracja.id,
+			id_restauracja: id,
 			dania: {}
 		}
 		
@@ -107,83 +109,100 @@ function Restauracja() {
 	return (
 		<main>
 			<Container>
-				<div className='do-strony-glownej'>
+				<div className='duzy-przycisk'>
 					<p onClick={() => {navigate('/')}}>Powrót do strony głównej</p>
 				</div>
-				<div className='restauracja-info'>
-					<Row>
-						<h2 className='text-center'>{restauracja.nazwa}</h2>
-					</Row>
-					<hr></hr>
-					<Row>
-						<Col md='6'>
-							<img src={restauracja.zdjęcie} alt='Zdjęcie restauracji' />
-						</Col>
-						<Col md='6'>
-							<h3>Opis</h3>
-							<p>{restauracja.opis}</p>
-							<h3>Adres</h3>
-							<p>{restauracja.miasto}</p>
-							<p>{restauracja.ulica} {restauracja.numer_lokalu}</p>
-						</Col>
-					</Row>
-					<hr></hr>
-					<Row>
-						<h3>Menu</h3>
-						<table>
-							<thead>
-								<tr>
-									<th>Danie</th>
-									<th>Cena</th>
-									<th>Zamówienie</th>
-								</tr>
-							</thead>
-							<tbody>
-								{menu.map((value, key) => {
-									
-									ceny[value.id_danie] = value.danie.cena
-																		
-									return (
-										<tr key={ key }>
-											<td>{value.danie.nazwa}</td>
-											<td>{value.danie.cena} zł</td>
-											<td className='zamówienie-ilość'>
-												<button onClick={ () => {
-													odejmijOdZamówienia (value.id_danie)
-												}}>-</button>
-												<p id={ `danie-${value.id_danie}` }>0</p>
-												<button onClick={ () => {
-													dodajDoZamówienia (value.id_danie)
-												}}>+</button>
-											</td>
+				{/* z niewyjaśnionych przyczyn nie mam dostępu do obiektów wewnętrznych chyba że potraktuje jeden rekord jako listę */}
+				{restauracja.map((restauracja_dane, key) => {
+					return (
+						<div key={ key } className='restauracja-info'>
+							<Row>
+								<h2 className='text-center'>{restauracja_dane.nazwa}</h2>
+							</Row>
+							<hr></hr>
+							<Row>
+								<Col md='6'>
+									<img src={restauracja_dane.zdjęcie} alt='Zdjęcie restauracji' />
+								</Col>
+								<Col md='6'>
+									<h3>Opis</h3>
+									<p>{restauracja_dane.opis}</p>
+									<h3>Adres</h3>
+									<p>{restauracja_dane.miasto}<br></br>{restauracja_dane.ulica} {restauracja_dane.numer_lokalu}</p>
+									<p>{restauracja_dane.kod_pocztowy} {restauracja_dane.miasto_poczta}</p>
+								</Col>
+							</Row>
+							<hr></hr>
+							<Row>
+								<h3>Menu</h3>
+								<table>
+									<thead>
+										<tr>
+											<th>Danie</th>
+											<th>Cena</th>
+											<th>Zamówienie</th>
 										</tr>
-									)
-								})}
-							</tbody>
-						</table>
-					</Row>
-				</div>
+									</thead>
+									<tbody>
+										{restauracja_dane.dania.map((danie, key) => {
+											
+											ceny[danie.id] = danie.cena
+											
+											return (
+												<tr key={ key }>
+													<td>{danie.nazwa}</td>
+													<td>{danie.cena} zł</td>
+													<td className='zamówienie-ilość'>
+														<button onClick={ () => {
+															odejmijOdZamówienia (danie.id)
+														}}>-</button>
+														<p id={ `danie-${danie.id}` }>0</p>
+														<button onClick={ () => {
+															dodajDoZamówienia (danie.id)
+														}}>+</button>
+													</td>
+												</tr>
+											)
+										})}
+									</tbody>
+								</table>
+							</Row>
+						</div>
+					)
+				})}
 				<hr></hr>
-				<Row>
-					<Col md='6'>
-						<Formik
-							initialValues={ initialValues }
-							onSubmit={ onSubmit }
-							validationSchema={ validationSchema }
-						>
-							<Form>
-								<label>Adres:</label>
-								<ErrorMessage name='adres' component='span' />
-								<Field id='inputAdres' name='adres' placeholder=''></Field>
+				<Formik
+					initialValues={ initialValues }
+					onSubmit={ onSubmit }
+					validationSchema={ validationSchema }
+					>
+					<Form>
+						<Row>
+							<Col md='6'>
+								<h3>Łączna kwota zamówienia:</h3>
+								<p id='zamówienie-kwota'>0.00 zł</p>
+							</Col>
+							<Col md='6'>
+								<h3>Adres dostawy:</h3>
+										<label>Miasto:</label>
+										<ErrorMessage name='miasto' component='span' />
+										<Field id='inputMiasto' name='miasto' placeholder=''></Field>
+										<label>Ulica:</label>
+										<ErrorMessage name='ulica' component='span' />
+										<Field id='inputUlica' name='ulica' placeholder=''></Field>
+										<label>Numer domu/mieszkania:</label>
+										<ErrorMessage name='numer_mieszkania' component='span' />
+										<Field id='inputNumerMieszkania' name='numer_mieszkania' placeholder=''></Field>
+							</Col>
+						</Row>
+						<hr></hr>
+						<Row>
+							<div className='duzy-przycisk'>
 								<button type='submit'>Złóż zamówienie</button>
-							</Form>
-						</Formik>
-					</Col>
-					<Col md='6'>
-						<h3>Łączna kwota zamówienia:</h3>
-						<p id='zamówienie-kwota'>0.00 zł</p>
-					</Col>
-				</Row>
+							</div>
+						</Row>
+					</Form>
+				</Formik>
 			</Container>
 		</main>
 	)
