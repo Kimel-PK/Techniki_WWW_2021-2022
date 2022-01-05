@@ -2,6 +2,68 @@
 
 Strona internetowa na React.js i Express.js
 
+## Uruchamianie
+
+Do uruchomienia projektu wymagane jest posiadanie zainstalowanego środowiska `Node.js`
+
+### Baza danych
+
+Uruchom lokalny serwer SQL i wgraj do niego przykładowy plik z danymi.
+
+Nazwa bazy danych: `www_projekt_2`
+
+Plik z przykładową bazą danych
+
+### Backend
+
+Przejdź do katalogu `/backend`
+
+Zainstaluj wymagane pakiety
+
+```bash
+npm install
+```
+
+Wpisz komendę
+
+```bash
+npm start
+```
+
+Serwer Express.js zostanie uruchomiony pod adresem `localhost:3001`
+
+### Frontend
+
+Przejdź do katalogu `/frontend`
+
+Zainstaluj wymagane pakiety
+
+```bash
+npm install
+```
+
+Wpisz komendę
+
+```bash
+npm start
+```
+
+Serwer React.js zostanie uruchomiony pod adresem `localhost:3000`, otwórz go korzystając z dowolnej przeglądarki.
+
+## Panel logowania kurierów
+
+W przykładowej bazie danych utworzone są domyślnie 2 konta kurierów
+
+```text
+Użytkownik: kamil@slimak.pl
+Hasło: test123
+```
+
+```text
+Użytkownik: piotr@bozek.pl
+Hasło: bmwe46
+```
+
 ## Użyte biblioteki
 
 ### Backend
@@ -69,3 +131,11 @@ Strona internetowa na React.js i Express.js
   - App.js - routing frontendu
   - src
     - pages - pliki podstron
+
+## Endpointy
+
+- Restauracje
+- Użytkownicy
+  - POST `/kurier/zrealizuj` Oznacz zamówienie jako zrelizowane
+- Zamówienia
+- Kurierzy
