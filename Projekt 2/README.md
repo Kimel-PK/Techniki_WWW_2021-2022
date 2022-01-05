@@ -12,7 +12,7 @@ Uruchom lokalny serwer SQL, utwórz bazę danych o nazwie `www_projekt_2`. Aplik
 
 [Plik z przykładową bazą danych](www_projekt_2.sql)
 
-### Backend
+### Serwer
 
 Przejdź do katalogu `/backend`
 
@@ -30,7 +30,7 @@ npm start
 
 Serwer Express.js zostanie uruchomiony pod adresem `localhost:3001`
 
-### Frontend
+### Klient
 
 Przejdź do katalogu `/frontend`
 
