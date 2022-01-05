@@ -133,7 +133,20 @@ Hasło: bmwe46
 ## Endpointy
 
 - Restauracje
+  - GET `/restauracje` - Pobierz listę restauracji
+  - GET `/restauracje/id/:id` - Pobierz wszystkie dane pojedynczej restauracji
 - Użytkownicy
-  - POST `/kurier/zrealizuj` Oznacz zamówienie jako zrelizowane
+  - GET `/auth/hash/:hasło` - Pobierz hash hasła (do ręcznego wstawienia do bazy)
+  - POST `/auth` - Zaloguj się
 - Zamówienia
+  - POST `/zamowienia/nowe` - Złóż nowe zamówienie
+  - POST `/zamowienia/nowe/danie` - Dodaj danie do zamówienia
+  - GET `/zamowienia/anuluj/:kod` - Anuluj zamówienie
+  - GET `/zamowienia/status/:kod` - Sprawdź status zamówienia
+  - POST `/zamowienia/dostepne/` - Lista zamówień dostępnych do przyjęcia przez kuriera
+  - POST `/zamowienia/kurier/przyjete` - Lista zamówień przyjętych przez kuriera
+  - POST `/zamowienia/kurier/zrealizowane` - Lista zamówień zrealizowanych przez kuriera
 - Kurierzy
+  - POST `/kurier` - Pobierz dane kuriera
+  - POST `/kurier/podejmij` - Oznacz zamówienie jako podjęte
+  - POST `/kurier/zrealizuj` - Oznacz zamówienie jako zrelizowane
