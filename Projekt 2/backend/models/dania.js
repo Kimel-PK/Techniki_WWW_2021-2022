@@ -15,12 +15,5 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false
 	})
 	
-	/*
-	dania.associate = (models) => {
-		models.dania.belongsToMany(models.zamówienia, { through: 'zamówienie_danie' })
-		models.zamówienia.belongsToMany(models.dania, { through: 'zamówienie_danie' })
-	}
-	*/
-	
 	return dania
 }

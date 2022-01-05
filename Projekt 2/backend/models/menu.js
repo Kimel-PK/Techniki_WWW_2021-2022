@@ -1,10 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
 	
 	const menu = sequelize.define("menu", {
-		kolejność: {
+		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-		}
+			autoIncrement: true,
+			primaryKey: true
+		},
 	},
 	{
 		tableName: 'menu',
