@@ -10,7 +10,7 @@ Do uruchomienia projektu wymagane jest posiadanie zainstalowanego środowiska `N
 
 Uruchom lokalny serwer SQL, utwórz bazę danych o nazwie `www_projekt_2`. Aplikacja sama utworzy potrzebne do działania tabele. Możesz także zaimportować przykładowe dane z pliku:
 
-Plik z przykładową bazą danych
+[Plik z przykładową bazą danych](/www_projekt_2.sql)
 
 ### Backend
 
