@@ -8,9 +8,7 @@ Do uruchomienia projektu wymagane jest posiadanie zainstalowanego środowiska `N
 
 ### Baza danych
 
-Uruchom lokalny serwer SQL i wgraj do niego przykładowy plik z danymi.
-
-Nazwa bazy danych: `www_projekt_2`
+Uruchom lokalny serwer SQL, utwórz bazę danych o nazwie `www_projekt_2`. Aplikacja sama utworzy potrzebne do działania tabele. Możesz także zaimportować przykładowe dane z pliku:
 
 Plik z przykładową bazą danych
 
