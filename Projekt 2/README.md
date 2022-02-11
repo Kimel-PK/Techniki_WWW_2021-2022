@@ -113,10 +113,6 @@ Hasło: bmwe46
 - [X] Możliwość zmiany statusu przyjętego zamówienia na "zrealizowane"
 - [X] Możliwość wylogowania się z panelu kuriera
 
-### Widok mobilny
-
-- [ ] Responsywność (Bootstrap)
-
 ## Ściąga
 
 - backend
