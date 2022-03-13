@@ -11,8 +11,8 @@ router.get('/restauracja/:id_restauracja', async (req, res) => {
 			as: 'danie'
 		}],
 		order: [
-            ['kolejność', 'ASC'],
-        ],
+			['kolejność', 'ASC'],
+		],
 		where: {
 			id_restauracja: id_restauracja
 		}
