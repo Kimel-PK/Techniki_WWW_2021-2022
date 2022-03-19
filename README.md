@@ -1,4 +1,4 @@
-# Techniki_WWW_2020-2021
+# Techniki WWW 2020/2021
 
 ## Projekt 1 - statyczna strona
 
